@@ -37,20 +37,6 @@ const userSchema = new Schema({
 		required: true,
 		default: true,
 	},
-	votes: {
-		type: [
-			{
-				_id: {
-					type: mongoose.SchemaTypes.ObjectId,
-					ref: 'Movie',
-				},
-				score: {
-					type: Number,
-				},
-			},
-		],
-		default: [],
-	},
 	token: {
 		type: String,
 		default: '',
@@ -191,32 +177,6 @@ userSchema.methods.deactivate = async function () {
 		this.token = '';
 		user = await this.save();
 	}
-
-	return user;
-};
-
-userSchema.methods.vote = async function (movieId, score) {
-	let user = this;
-	let movie = await mongoose.model('Movie').findById(movieId);
-
-	if (!movie) {
-		throw new Error('O filme informado não existe.');
-	}
-
-	if (score < 0 || score > 4) {
-		throw new Error('A nota deve estar entre 0 e 4.');
-	}
-
-	user.votes = await user.votes.pull(movieId);
-
-	const vote = {
-		_id: movieId,
-		score: score,
-	};
-
-	user.votes.push(vote);
-	movie = await movie.saveVote(user._id, score);
-	user = await user.save();
 
 	return user;
 };

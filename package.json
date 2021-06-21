@@ -38,6 +38,7 @@
     "mongoose-type-email": "^1.1.2",
     "morgan": "~1.9.1",
     "nodemon": "^2.0.4",
+    "sequelize": "^6.6.2",
     "swig": "^1.4.2"
   },
   "devDependencies": {

@@ -5,7 +5,6 @@ const activate = require('./activate');
 const deactivate = require('./deactivate');
 const update = require('./update');
 const updateById = require('./updateById');
-const vote = require('./vote');
 
 const routes = {
 	create: '',
@@ -16,7 +15,6 @@ const routes = {
 	updateById: '/:id',
 	activate: '/:id/activate',
 	deactivate: '/:id/deactivate',
-	vote: '/vote',
 };
 
 module.exports = {
@@ -28,5 +26,4 @@ module.exports = {
 	updateById,
 	activate,
 	deactivate,
-	vote,
 };

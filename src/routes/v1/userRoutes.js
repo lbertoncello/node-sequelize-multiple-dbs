@@ -24,11 +24,6 @@ router.post(
 	auth.admin,
 	userController.create,
 );
-router.post(
-	userController.routes.vote,
-	auth.user,
-	userController.vote,
-);
 router.put(
 	userController.routes.update,
 	auth.user,
