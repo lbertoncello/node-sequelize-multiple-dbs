@@ -1,0 +1,20 @@
+{
+    "git.ignoreLimitWarning": true,
+
+    "[javascript]": {
+        "editor.defaultFormatter":  "rvest.vs-code-prettier-eslint"
+    },
+    "[json]": {
+        "editor.defaultFormatter":  "rvest.vs-code-prettier-eslint"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter":  "rvest.vs-code-prettier-eslint"
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint":  true
+    },
+    "eslint.validate": [
+        "javascript"
+    ],
+    "files.eol": "\n",
+}
