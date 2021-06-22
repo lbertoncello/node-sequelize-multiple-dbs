@@ -66,7 +66,7 @@ userSchema.pre('save', async function (next) {
 	}
 
 	try {
-		const salt = await bcrypt.genSalt(config.db.saltRounds);
+		const salt = await bcrypt.genSalt(config.jwt.saltRounds);
 
 		this.password = await bcrypt.hash(this.password, salt);
 

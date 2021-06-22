@@ -14,7 +14,7 @@
     "@models": "src/models",
     "@data": "data",
     "@utils": "src/utils",
-    "@database": "src/database",
+    "@database": "src/databases",
     "@constants": "src/constants",
     "@config": "src/config",
     "@controllers": "src/controllers",
@@ -38,6 +38,7 @@
     "mongoose-type-email": "^1.1.2",
     "morgan": "~1.9.1",
     "nodemon": "^2.0.4",
+    "pg": "^8.6.0",
     "sequelize": "^6.6.2",
     "swig": "^1.4.2"
   },
@@ -51,7 +52,8 @@
     "random": "^3.0.6",
     "random-birthday": "^1.0.1",
     "random-email": "^1.0.3",
-    "randomstring": "^1.2.1"
+    "randomstring": "^1.2.1",
+    "sequelize-cli": "^6.2.0"
   },
   "config": {
     "commitizen": {

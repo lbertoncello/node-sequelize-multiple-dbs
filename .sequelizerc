@@ -1,0 +1,11 @@
+'use strict';
+
+require('dotenv').config(); 
+const path = require('path');
+
+module.exports = {
+    'config': path.resolve(__dirname, 'src', 'config', 'db', 'postgre', 'config.js'),
+    'models-path': path.resolve(__dirname, 'src','models', 'postgre'),
+    'seeders-path': path.resolve(__dirname, 'src', 'databases', 'postgre', 'seeders'),
+    'migrations-path': path.resolve(__dirname, 'src', 'databases', 'postgre', 'migrations')
+};

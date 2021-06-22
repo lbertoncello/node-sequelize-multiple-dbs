@@ -25,7 +25,12 @@ app.engine('html', cons.swig);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
 
-database.connect(config.db.url).then(() => {
+const dbConnections = [
+	database.mongo.connect(config.db.mongo.url),
+	database.postgre.connect(),
+];
+
+Promise.all(dbConnections).then(() => {
 	const routes = require('@routes/routes');
 	const errorHandler = require('@middlewares/error-handler');
 	const utils = require('@utils');

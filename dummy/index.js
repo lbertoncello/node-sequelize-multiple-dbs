@@ -4,7 +4,7 @@ require('dotenv').config();
 const database = require('@database');
 const config = require('@config');
 
-database.connect(config.db.url).then(async () => {
+database.connect(config.db.mongo.url).then(async () => {
 	const dummyUser = require('./User');
 
 	const args = process.argv.slice(2);

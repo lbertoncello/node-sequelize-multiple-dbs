@@ -145,7 +145,7 @@ module.exports = {
 			'error',
 			{
 				multiline: true,
-				minItems: 3,
+				minItems: 2,
 			},
 		],
 		'block-spacing': [ 'error', 'always' ],
