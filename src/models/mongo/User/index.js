@@ -6,7 +6,10 @@ const jwt = require('jsonwebtoken');
 
 require('mongoose-type-email');
 
-const userTypes = [ 'user', 'admin' ];
+const userTypes = [
+	'user',
+	'admin',
+];
 
 const userSchema = new Schema({
 	fullname: {
