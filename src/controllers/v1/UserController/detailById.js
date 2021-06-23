@@ -16,7 +16,7 @@ async function getDetail (req, res, next) {
 				email: user.email,
 				userType: user.userType,
 				active: user.active,
-				votes: user.votes,
+				databaseAllowed: user.databaseAllowed,
 			},
 		});
 	} catch (e) {

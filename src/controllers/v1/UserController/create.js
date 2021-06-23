@@ -12,6 +12,7 @@ async function create (req, res, next) {
 				fullname: user.fullname,
 				email: user.email,
 				userType: user.userType,
+				databaseAllowed: user.databasesAllowed,
 			};
 
 			return res.status(200).json({

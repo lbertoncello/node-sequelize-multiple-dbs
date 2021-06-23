@@ -2,17 +2,17 @@ const express = require('express');
 const router = express.Router();
 
 const auth = require('@middlewares/auth');
-const contactController = require('@controllers/v1/ContactController/varejao');
+const contactController = require('@controllers/v1/ContactController');
 
 router.get(
 	contactController.routes.show,
-	auth.admin,
+	auth.user,
 	contactController.show,
 );
 
 router.post(
 	contactController.routes.store,
-	auth.admin,
+	auth.user,
 	contactController.store,
 );
 

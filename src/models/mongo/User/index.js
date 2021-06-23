@@ -44,6 +44,11 @@ const userSchema = new Schema({
 		type: String,
 		default: '',
 	},
+	databasesAllowed: {
+		type: [ String ],
+		required: true,
+		trim: true,
+	},
 }, {
 	timestamps: true,
 });
@@ -121,6 +126,10 @@ userSchema.statics.insertIfNotExists = async function (doc) {
 	}
 
 	return user;
+};
+
+userSchema.statics.getAllDatabasesAllowed = async function () {
+	return await mongoose.model('User').distinct('databasesAllowed');
 };
 
 /*
