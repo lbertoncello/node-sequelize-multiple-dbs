@@ -2,27 +2,27 @@ module.exports = {
 	development: {
 		databases: {
 			varejao: {
-				username: process.env.POSTGRE_USERNAME,
-				password: process.env.POSTGRE_PASSWORD,
-				database: process.env.POSTGRE_DB_NAME,
-				host: process.env.POSTGRE_HOST,
-				port: parseInt(process.env.POSTGRE_PORT),
+				username: process.env.VAREJAO_USERNAME,
+				password: process.env.VAREJAO_PASSWORD,
+				database: process.env.VAREJAO_DB_NAME,
+				host: process.env.VAREJAO_HOST,
+				port: parseInt(process.env.VAREJAO_PORT),
 				dialect: 'postgres',
 				define: {
 					timestamps: true,
 				},
 			},
-			// macapa: {
-			// 	username: process.env.POSTGRE_USERNAME,
-			// 	password: process.env.POSTGRE_PASSWORD,
-			// 	database: process.env.POSTGRE_DB_NAME,
-			// 	host: process.env.POSTGRE_HOST,
-			// 	port: parseInt(process.env.POSTGRE_PORT),
-			// 	dialect: 'mysql',
-			// 	define: {
-			// 		timestamps: true,
-			// 	},
-			// },
+			macapa: {
+				username: process.env.MACAPA_USERNAME,
+				password: process.env.MACAPA_PASSWORD,
+				database: process.env.MACAPA_DB_NAME,
+				host: process.env.MACAPA_HOST,
+				port: parseInt(process.env.MACAPA_PORT),
+				dialect: 'mysql',
+				define: {
+					timestamps: true,
+				},
+			},
 		},
 	},
 
@@ -30,23 +30,29 @@ module.exports = {
 	 * Dados para serem utilizados pelo sequelize-cli
 	 */
 	varejao: {
-		username: process.env.POSTGRE_USERNAME,
-		password: process.env.POSTGRE_PASSWORD,
-		database: process.env.POSTGRE_DB_NAME,
-		host: process.env.POSTGRE_HOST,
-		port: parseInt(process.env.POSTGRE_PORT),
+		username: process.env.VAREJAO_USERNAME,
+		password: process.env.VAREJAO_PASSWORD,
+		database: process.env.VAREJAO_DB_NAME,
+		host: process.env.VAREJAO_HOST,
+		port: parseInt(process.env.VAREJAO_PORT),
 		dialect: 'postgres',
 		define: {
 			timestamps: true,
 		},
 	},
 
-	// macapa: {
-	// 	database: process.env.RDS_DATABASE2,
-	// 	username: process.env.RDS_USERNAME2,
-	// 	password: process.env.RDS_PASSWORD2,
-	// 	host: process.env.RDS_HOSTNAME2,
-	// 	port: process.env.RDS_PORT2,
-	// 	dialect: 'mssql', // second database can have a different dialect
-	// },
+	/*
+	 * Dados para serem utilizados pelo sequelize-cli
+	 */
+	macapa: {
+		username: process.env.MACAPA_USERNAME,
+		password: process.env.MACAPA_PASSWORD,
+		database: process.env.MACAPA_DB_NAME,
+		host: process.env.MACAPA_HOST,
+		port: parseInt(process.env.MACAPA_PORT),
+		dialect: 'mysql',
+		define: {
+			timestamps: true,
+		},
+	},
 };
