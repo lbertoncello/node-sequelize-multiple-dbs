@@ -1,4 +1,4 @@
-const model = require('@models').varejao;
+const model = require('@models/sql');
 
 async function store (req, res, next) {
 	try {
@@ -6,10 +6,11 @@ async function store (req, res, next) {
 		const accounts = [];
 
 		for (const accountDAO of accountsDao) {
-			const account = await model.sequelize.models.Contacts.create({
-				nome: accountDAO.name,
-				celular: accountDAO.cellphone,
-			});
+			const account = await model.varejao.
+				sequelize.models.Contacts.create({
+					nome: accountDAO.name,
+					celular: accountDAO.cellphone,
+				});
 
 			accounts.push(account);
 		}

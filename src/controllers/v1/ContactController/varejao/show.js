@@ -4,9 +4,6 @@ const model = require('@models/sql');
 
 async function show (req, res, next) {
 	try {
-		console.log(model.varejao.sequelize.models);
-		// console.log(Object.keys(model.varejao.sequelize));
-
 		const accounts =
 			await model.varejao.sequelize.models.Contacts.findAll();
 
