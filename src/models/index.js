@@ -1,4 +1,4 @@
 module.exports = {
 	mongo: require('./mongo'),
-	postgre: require('./postgre'),
+	sql: require('./sql'),
 };

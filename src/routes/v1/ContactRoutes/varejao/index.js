@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const auth = require('@middlewares/auth');
-const contactController = require('@controllers/v1/ContactController/postgre');
+const contactController = require('@controllers/v1/ContactController/varejao');
 
 router.get(
 	contactController.routes.show,

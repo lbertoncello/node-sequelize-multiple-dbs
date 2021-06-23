@@ -1,4 +1,4 @@
-const model = require('@models/postgre');
+const model = require('@models').varejao;
 
 async function store (req, res, next) {
 	try {

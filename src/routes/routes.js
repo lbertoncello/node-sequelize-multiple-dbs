@@ -2,7 +2,7 @@ const adminRoutesV1 = require('./v1/adminRoutes');
 const authRoutesV1 = require('./v1/authRoutes');
 const baseRoutesV1 = require('./v1/baseRoutes');
 const userRoutesV1 = require('./v1/userRoutes');
-const contactRoutesPostgreV1 = require('./v1/ContactRoutes/postgre');
+const contactRoutesPostgreV1 = require('./v1/ContactRoutes/varejao');
 
 const v1Route = '/api/v1';
 

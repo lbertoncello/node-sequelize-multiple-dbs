@@ -1,3 +1,3 @@
 module.exports = {
-	postgre: require('./postgre'),
+	varejao: require('./varejao'),
 };
