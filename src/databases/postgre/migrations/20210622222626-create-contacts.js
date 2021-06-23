@@ -8,11 +8,11 @@ module.exports = {
 				primaryKey: true,
 				type: Sequelize.UUID,
 			},
-			name: {
+			nome: {
 				type: Sequelize.STRING,
 				allowNull: false,
 			},
-			cellphone: {
+			celular: {
 				type: Sequelize.STRING,
 				allowNull: false,
 			},

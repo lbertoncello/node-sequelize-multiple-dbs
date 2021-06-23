@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const { Sequelize } = require('sequelize');
 const basename = path.basename(__filename);
-const sequelize = require('../config/database.js');
+const sequelize = require('@config/db/postgre/database');
 
 const db = {};
 

@@ -3,7 +3,7 @@ module.exports = {
 	password: process.env.POSTGRE_PASSWORD,
 	database: process.env.POSTGRE_DB_NAME,
 	host: process.env.POSTGRE_HOST,
-	port: process.env.POSTGRE_PORT,
+	port: parseInt(process.env.POSTGRE_PORT),
 	dialect: 'postgres',
 	define: {
 		timestamps: true,

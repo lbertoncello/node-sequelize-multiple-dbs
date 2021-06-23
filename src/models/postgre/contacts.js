@@ -25,8 +25,33 @@ module.exports = (sequelize, DataTypes) => {
 			primaryKey: true,
 			defaultValue: DataTypes.UUIDV4,
 		},
-		name: DataTypes.STRING,
-		cellphone: DataTypes.STRING,
+		nome: {
+			type: DataTypes.STRING,
+			validate: {
+				notEmpty: true,
+				len: {
+					args: [
+						3,
+						100,
+					],
+					msg: 'Por favor, forneça um nome de 3 até 100 caracteres. ',
+				},
+			},
+		},
+		celular: {
+			type: DataTypes.STRING,
+			validate: {
+				notEmpty: true,
+				len: {
+					args: [
+						13,
+						13,
+					],
+					msg: 'Por favor, forneça um telefone de ' +
+				'13 caracteres no formato 5541959365078.',
+				},
+			},
+		},
 	}, {
 		sequelize: sequelize,
 		modelName: 'Contacts',
