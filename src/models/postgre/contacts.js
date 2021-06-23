@@ -34,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
 						3,
 						100,
 					],
-					msg: 'Por favor, forneça um nome de 3 até 100 caracteres. ',
+					msg: 'Por favor, forneça nomes de 3 até 100 caracteres. ',
 				},
 			},
 		},
@@ -47,7 +47,7 @@ module.exports = (sequelize, DataTypes) => {
 						13,
 						13,
 					],
-					msg: 'Por favor, forneça um telefone de ' +
+					msg: 'Por favor, forneça telefones de ' +
 				'13 caracteres no formato 5541959365078.',
 				},
 			},

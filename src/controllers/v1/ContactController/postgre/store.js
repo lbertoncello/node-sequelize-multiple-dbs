@@ -16,7 +16,7 @@ async function store (req, res, next) {
 
 		return res.status(200).json({
 			success: true,
-			message: 'Conta inserida com sucesso.',
+			message: 'Conta(s) inserida(s) com sucesso.',
 			data: accounts,
 		});
 	} catch (e) {

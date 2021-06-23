@@ -1,22 +1,12 @@
 const model = require('@models/postgre');
 
-async function store (req, res, next) {
+async function show (req, res, next) {
 	try {
-		const accountsDao = req.body;
-		const accounts = [];
-
-		for (const accountDAO of accountsDao) {
-			const account = await model.sequelize.models.Contacts.create({
-				name: accountDAO.name,
-				cellphone: accountDAO.cellphone,
-			});
-
-			accounts.push(account);
-		}
+		const accounts = await model.sequelize.models.Contacts.findAll();
 
 		return res.status(200).json({
 			success: true,
-			message: 'Conta inserida com sucesso.',
+			message: 'Conta(s) lida(s) com sucesso.',
 			data: accounts,
 		});
 	} catch (e) {
@@ -24,4 +14,4 @@ async function store (req, res, next) {
 	}
 }
 
-module.exports = store;
+module.exports = show;
