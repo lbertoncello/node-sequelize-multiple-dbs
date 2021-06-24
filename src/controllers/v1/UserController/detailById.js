@@ -16,7 +16,7 @@ async function getDetail (req, res, next) {
 				email: user.email,
 				userType: user.userType,
 				active: user.active,
-				databaseAllowed: user.databaseAllowed,
+				databasesAllowed: user.databasesAllowed,
 			},
 		});
 	} catch (e) {
