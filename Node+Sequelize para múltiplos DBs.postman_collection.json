@@ -1,0 +1,702 @@
+{
+	"info": {
+		"_postman_id": "ded60607-c5b9-408b-bb41-0c2b6b8d03ff",
+		"name": "Node+Sequelize para múltiplos DBs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@admin.com\",\r\n    \"password\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"user@user.com\",\r\n    \"password\": \"user\",\r\n    \"fullname\": \"user\",\r\n    \"databasesAllowed\": [ \"varejao\", \"macapa\" ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"user@user.com\",\r\n    \"password\": \"user\",\r\n    \"fullname\": \"user user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"user@user.com\",\r\n    \"password\": \"user\",\r\n    \"fullname\": \"user\",\r\n    \"databasesAllowed\": [ \"varejao\", \"macapa\" ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/user/60d4a4c2c4fda54a58a2b262",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"60d4a4c2c4fda54a58a2b262"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/user/detail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detail By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/user/60d4a4c2c4fda54a58a2b262/detail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"60d4a4c2c4fda54a58a2b262",
+								"detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Activate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/user/60d4a4c2c4fda54a58a2b262/activate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"60d4a4c2c4fda54a58a2b262",
+								"activate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deactivate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/user/60d4a4c2c4fda54a58a2b262/deactivate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"60d4a4c2c4fda54a58a2b262",
+								"deactivate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin2@admin.com\",\r\n    \"password\": \"admin\",\r\n    \"fullname\": \"Admin 2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin2@admin.com\",\r\n    \"password\": \"admin\",\r\n    \"fullname\": \"Admin 2 alterado 2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin2@admin.com\",\r\n    \"password\": \"admin\",\r\n    \"fullname\": \"Admin 2 alterado\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/admin/60d4a72534fafe473cee916d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"60d4a72534fafe473cee916d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/admin/detail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detail By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/admin/60d4a72534fafe473cee916d/detail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"60d4a72534fafe473cee916d",
+								"detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Activate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/admin/60d4a72534fafe473cee916d/activate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"60d4a72534fafe473cee916d",
+								"activate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deactivate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/admin/60d4a72534fafe473cee916d/deactivate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"60d4a72534fafe473cee916d",
+								"deactivate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contacts",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contacts\": [\r\n        {\r\n            \"name\": \"Marina Rodrigues\",\r\n            \"cellphone\": \"5541996941919\"\r\n        },\r\n        {\r\n            \"name\": \"Nicolas Rodrigues\",\r\n            \"cellphone\": \"5541954122723\"\r\n        },\r\n        {\r\n            \"name\": \"Davi Lucca Rocha\",\r\n            \"cellphone\": \"5541979210400\"\r\n        },\r\n        {\r\n            \"name\": \"Lucas Barros\",\r\n            \"cellphone\": \"5541944061868\"\r\n        },\r\n        {\r\n            \"name\": \"Lucca Lima\",\r\n            \"cellphone\": \"5541908727427\"\r\n        },\r\n        {\r\n            \"name\": \"Benjamin Sales\",\r\n            \"cellphone\": \"5541914106998\"\r\n        },\r\n        {\r\n            \"name\": \"Ana Laura Pereira\",\r\n            \"cellphone\": \"5541919883324\"\r\n        },\r\n        {\r\n            \"name\": \"Henrique da Conceição\",\r\n            \"cellphone\": \"5541936250777\"\r\n        },\r\n        {\r\n            \"name\": \"Ana Clara Porto\",\r\n            \"cellphone\": \"5541988315943\"\r\n        },\r\n        {\r\n            \"name\": \"Ryan Souza\",\r\n            \"cellphone\": \"5541937901945\"\r\n        },\r\n        {\r\n            \"name\": \"Nina da Cruz\",\r\n            \"cellphone\": \"5541930283480\"\r\n        },\r\n        {\r\n            \"name\": \"Esther Costa\",\r\n            \"cellphone\": \"5541976620331\"\r\n        },\r\n        {\r\n            \"name\": \"Felipe Ribeiro\",\r\n            \"cellphone\": \"5541987077478\"\r\n        },\r\n        {\r\n            \"name\": \"Sra. Amanda Cavalcanti\",\r\n            \"cellphone\": \"5541905979333\"\r\n        },\r\n        {\r\n            \"name\": \"Bruno Farias\",\r\n            \"cellphone\": \"5541945698108\"\r\n        },\r\n        {\r\n            \"name\": \"Sra. Mirella Aragão\",\r\n            \"cellphone\": \"5541932294266\"\r\n        },\r\n        {\r\n            \"name\": \"Nicole Ramos\",\r\n            \"cellphone\": \"5541972713343\"\r\n        },\r\n        {\r\n            \"name\": \"Augusto Novaes\",\r\n            \"cellphone\": \"5541934105240\"\r\n        },\r\n        {\r\n            \"name\": \"Vitor Hugo Cunha\",\r\n            \"cellphone\": \"5541981870128\"\r\n        },\r\n        {\r\n            \"name\": \"Luiz Miguel Monteiro\",\r\n            \"cellphone\": \"5541994140336\"\r\n        },\r\n        {\r\n            \"name\": \"Alícia Santos\",\r\n            \"cellphone\": \"5541978861534\"\r\n        },\r\n        {\r\n            \"name\": \"Sr. Marcos Vinicius Duarte\",\r\n            \"cellphone\": \"5541979767374\"\r\n        },\r\n        {\r\n            \"name\": \"Luiz Gustavo da Cunha\",\r\n            \"cellphone\": \"5541971153240\"\r\n        },\r\n        {\r\n            \"name\": \"Murilo Moraes\",\r\n            \"cellphone\": \"5541971140196\"\r\n        },\r\n        {\r\n            \"name\": \"Julia Costela\",\r\n            \"cellphone\": \"5541938133697\"\r\n        },\r\n        {\r\n            \"name\": \"André Cardoso\",\r\n            \"cellphone\": \"5541925935033\"\r\n        },\r\n        {\r\n            \"name\": \"Luiza Campos\",\r\n            \"cellphone\": \"5541942303433\"\r\n        },\r\n        {\r\n            \"name\": \"Nathan da Mata\",\r\n            \"cellphone\": \"5541971551888\"\r\n        },\r\n        {\r\n            \"name\": \"Nina Sales\",\r\n            \"cellphone\": \"5541952206418\"\r\n        },\r\n        {\r\n            \"name\": \"Natália Caldeira\",\r\n            \"cellphone\": \"5541977897055\"\r\n        },\r\n        {\r\n            \"name\": \"Thiago Cardoso\",\r\n            \"cellphone\": \"5541928464916\"\r\n        },\r\n        {\r\n            \"name\": \"Yago Ferreira\",\r\n            \"cellphone\": \"5541962241042\"\r\n        },\r\n        {\r\n            \"name\": \"Isabel Moura\",\r\n            \"cellphone\": \"5541917433481\"\r\n        },\r\n        {\r\n            \"name\": \"Francisco Nogueira\",\r\n            \"cellphone\": \"5541916159692\"\r\n        },\r\n        {\r\n            \"name\": \"André Monteiro\",\r\n            \"cellphone\": \"5541987830622\"\r\n        },\r\n        {\r\n            \"name\": \"Ana Julia Barbosa\",\r\n            \"cellphone\": \"5541965101052\"\r\n        },\r\n        {\r\n            \"name\": \"Emanuella Vieira\",\r\n            \"cellphone\": \"5541937084511\"\r\n        },\r\n        {\r\n            \"name\": \"Rebeca Correia\",\r\n            \"cellphone\": \"5541944003092\"\r\n        },\r\n        {\r\n            \"name\": \"Luiza Lopes\",\r\n            \"cellphone\": \"5541950648087\"\r\n        },\r\n        {\r\n            \"name\": \"Sr. Vitor Hugo Jesus\",\r\n            \"cellphone\": \"5541966777904\"\r\n        },\r\n        {\r\n            \"name\": \"Bárbara da Rosa\",\r\n            \"cellphone\": \"5541984242583\"\r\n        },\r\n        {\r\n            \"name\": \"Fernando Melo\",\r\n            \"cellphone\": \"5541993278935\"\r\n        },\r\n        {\r\n            \"name\": \"Melissa Pereira\",\r\n            \"cellphone\": \"5541961982198\"\r\n        },\r\n        {\r\n            \"name\": \"Luigi Melo\",\r\n            \"cellphone\": \"5541937316914\"\r\n        },\r\n        {\r\n            \"name\": \"Davi Lucas Silva\",\r\n            \"cellphone\": \"5541919590454\"\r\n        },\r\n        {\r\n            \"name\": \"Sr. Marcos Vinicius Alves\",\r\n            \"cellphone\": \"5541940281564\"\r\n        },\r\n        {\r\n            \"name\": \"Igor da Rocha\",\r\n            \"cellphone\": \"5541981148730\"\r\n        },\r\n        {\r\n            \"name\": \"Noah Ramos\",\r\n            \"cellphone\": \"5541943467544\"\r\n        },\r\n        {\r\n            \"name\": \"Sofia Pinto\",\r\n            \"cellphone\": \"5541942446391\"\r\n        },\r\n        {\r\n            \"name\": \"Joaquim Vieira\",\r\n            \"cellphone\": \"5541988403129\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/contact/macapa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"contact",
+								"macapa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show All",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/contact/macapa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"contact",
+								"macapa"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "admin_token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDQ5YWUxMTM3ODBjNGU2NGU3ZDgyMyIsImlhdCI6MTYyNDU0ODUwNiwiZXhwIjoxNjI0NTU4NTA2fQ._nzGKrB7k1cTfzX4s-dvpr_kljUuUjKZcJrREFFLqew"
+		},
+		{
+			"key": "user_token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDRhNGMyYzRmZGE1NGE1OGEyYjI2MiIsImlhdCI6MTYyNDU0ODg5MywiZXhwIjoxNjI0NTU4ODkzfQ.lDv3HIPxXAQiq78va_vj3IxY6hpRxqwLJM-Z61NQNvY"
+		}
+	]
+}

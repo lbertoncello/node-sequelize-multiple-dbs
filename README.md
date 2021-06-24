@@ -27,7 +27,8 @@ O problema consiste em receber 1 ou mais contatos de celulares através de uma A
 
 ### Especificações da API:
 - A autenticação será através de um token JWT no Authorization Header
-- A lista de contatos que deve ser inserido em cada cliente está no formato JSON e pode ser encontrado no diretório data
+- A lista de contatos que deve ser inserido em cada cliente está no formato JSON e pode ser encontrado no diretório `data`
+- O schema para cada banco de dados (mínimo) requerido pode ser encontrado no diretório `table-schemas`
 
 ### Especificações do Cliente Macapá:
 - Banco de dados Mysql
@@ -76,7 +77,7 @@ Basta executar:
 
 ### Postman
 
-Todas as rotas foram documentadas via Postman. O arquivo para importar essa documentação pode ser encontrado neste repositório.
+Todas as rotas foram documentadas via Postman. O arquivo para importar essa documentação pode ser encontrado neste repositório no arquivo `Node+Sequelize para múltiplos DBs.postman_collection.json`.
  
 ### Instruções
 
