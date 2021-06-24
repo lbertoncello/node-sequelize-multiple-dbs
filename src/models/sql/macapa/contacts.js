@@ -34,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
 						3,
 						200,
 					],
-					msg: 'Por favor, forneça nomes de 3 até 100 caracteres. ',
+					msg: 'Por favor, forneça nomes de 3 até 200 caracteres. ',
 				},
 			},
 		},
@@ -44,8 +44,8 @@ module.exports = (sequelize, DataTypes) => {
 				notEmpty: true,
 				len: {
 					args: [
-						20,
-						20,
+						13,
+						13,
 					],
 					msg: 'Por favor, forneça telefones de ' +
 				'13 caracteres no formato 5541959365078.',
@@ -55,6 +55,14 @@ module.exports = (sequelize, DataTypes) => {
 	}, {
 		sequelize: sequelize,
 		modelName: 'Contacts',
+		hooks: {
+			beforeSave: (contact, options) => {
+				contact.nome = contact.nome.toUpperCase();
+				contact.celular = `+${contact.celular.slice(0, 2)} ` +
+					`(${contact.celular.slice(2, 4)}) ${contact.celular.slice(4, 9)}-` +
+					`${contact.celular.slice(9)}`;
+			},
+		},
 	});
 
 	return Contacts;
