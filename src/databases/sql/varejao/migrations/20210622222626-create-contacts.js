@@ -9,11 +9,11 @@ module.exports = {
 				type: Sequelize.UUID,
 			},
 			nome: {
-				type: Sequelize.STRING,
+				type: Sequelize.STRING(100),
 				allowNull: false,
 			},
 			celular: {
-				type: Sequelize.STRING,
+				type: Sequelize.STRING(13),
 				allowNull: false,
 			},
 			createdAt: {

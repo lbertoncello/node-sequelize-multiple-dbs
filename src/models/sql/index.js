@@ -8,6 +8,10 @@ const dbsSequelize = require('@config/db/sql/database');
 
 const dbs = {};
 
+
+/*
+ * Responsável por adicionar os modelos ao seu respectivo db
+ */
 fs.readdirSync(__dirname).
 	filter((file) => (
 		file.indexOf('.') !== 0 && file !== basename
@@ -25,28 +29,11 @@ fs.readdirSync(__dirname).
 					Sequelize.DataTypes,
 				);
 
-				console.log(folder);
-
 				dbs[folder] = {};
 				dbs[folder][model.name] = model;
 			});
 	});
 
-// fs.readdirSync(__dirname).
-// 	filter((file) => (
-// 		file.indexOf('.') !== 0 && file !== basename && file.slice(-3) === '.js'
-// 	)).
-// 	forEach((file) => {
-// 		const model = require(path.join(__dirname, file))(
-// 			dbsSequelize,
-// 			Sequelize.DataTypes,
-// 		);
-
-// 		dbs[model.name] = model;
-// 	});
-
-Object.keys(dbsSequelize).forEach((dbKey) => console.log(dbKey));
-console.log(dbs);
 
 Object.keys(dbsSequelize).forEach((dbKey) => {
 	Object.keys(dbs[dbKey]).forEach((modelName) => {
@@ -59,16 +46,5 @@ Object.keys(dbsSequelize).forEach((dbKey) => {
 	});
 });
 
-// console.log(dbs);
-
-
-// Object.keys(dbs).forEach((modelName) => {
-// 	if (dbs[modelName].associate) {
-// 		dbs[modelName].associate(dbs);
-// 	}
-// });
-
-// dbs.sequelize = dbsSequelize;
-// dbs.Sequelize = Sequelize;
 
 module.exports = dbs;

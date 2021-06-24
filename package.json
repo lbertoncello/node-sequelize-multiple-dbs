@@ -6,7 +6,6 @@
     "start": "node --icu-data-dir=node_modules/full-icu ./src/bin/www",
     "dev": "nodemon --icu-data-dir=node_modules/full-icu ./src/bin/www",
     "lint": "eslint --fix --ext .js,.jsx .",
-    "populate": "node dummy",
     "postinstall": "husky install",
     "sequelize:varejao:migrate": "sequelize --options-path ./.sequelizerc-varejao --env varejao db:migrate",
     "sequelize:varejao:migrate:undo": "sequelize --options-path ./.sequelizerc-varejao --env varejao db:migrate:undo",

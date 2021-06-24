@@ -6,6 +6,7 @@ services:
     environment:
     - MYSQL_ROOT_PASSWORD=admin
     - MYSQL_DATABASE=admin
+    - MYSQL_DATABASE=macapa
     - MYSQL_USER=admin
     - MYSQL_PASSWORD=admin
     - MYSQL_ROOT_HOST=%
@@ -20,6 +21,7 @@ services:
     environment:
       POSTGRES_PASSWORD: "admin"
       POSTGRES_USER: "admin"
+      POSTGRES_DB: "varejao"
 
   mongo:
     image: mongo
