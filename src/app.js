@@ -27,7 +27,7 @@ app.set('view engine', 'html');
 
 const dbConnections = [
 	database.mongo.connect(config.db.mongo.url),
-	database.postgre.connect(),
+	database.sql.connect(),
 ];
 
 Promise.all(dbConnections).then(() => {

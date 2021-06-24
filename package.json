@@ -7,7 +7,13 @@
     "dev": "nodemon --icu-data-dir=node_modules/full-icu ./src/bin/www",
     "lint": "eslint --fix --ext .js,.jsx .",
     "populate": "node dummy",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "sequelize:varejao:migrate": "sequelize --options-path ./.sequelizerc-varejao --env varejao db:migrate",
+    "sequelize:varejao:migrate:undo": "sequelize --options-path ./.sequelizerc-varejao --env varejao db:migrate:undo",
+    "sequelize:varejao:seed:all": "sequelize --options-path ./.sequelizerc-varejao --env varejao db:seed:all",
+    "sequelize:macapa:migrate": "sequelize --options-path ./.sequelizerc-macapa --env macapa db:migrate",
+    "sequelize:macapa:migrate:undo": "sequelize --options-path ./.sequelizerc-macapa --env macapa db:migrate:undo",
+    "sequelize:macapa:seed:all": "sequelize --options-path ./.sequelizerc-macapa --env macapa db:seed:all"
   },
   "_moduleAliases": {
     "@api": "src/api",
@@ -37,6 +43,7 @@
     "mongoose-paginate-v2": "^1.3.18",
     "mongoose-type-email": "^1.1.2",
     "morgan": "~1.9.1",
+    "mysql2": "^2.2.5",
     "nodemon": "^2.0.4",
     "pg": "^8.6.0",
     "sequelize": "^6.6.2",
