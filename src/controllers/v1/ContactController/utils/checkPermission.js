@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const User = mongoose.model('User');
 
-module.exports = async (user, targetDb) => {
-	const allDatabasesAllowed = await User.getAllDatabasesAllowed();
+module.exports = (user, targetDb) => {
+	const allDatabasesAllowed = User.getAllDatabasesAllowed();
 
 	if (!allDatabasesAllowed.includes(targetDb)) {
 		return {

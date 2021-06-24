@@ -11,6 +11,11 @@ const userTypes = [
 	'admin',
 ];
 
+const databasesAllowed = [
+	'macapa',
+	'varejao',
+];
+
 const userSchema = new Schema({
 	fullname: {
 		type: String,
@@ -48,6 +53,18 @@ const userSchema = new Schema({
 		type: [ String ],
 		required: true,
 		trim: true,
+		validate: {
+			validator: function (databases) {
+				for (const database of databases) {
+					if (!databasesAllowed.includes(database)) {
+						return false;
+					}
+				}
+
+				return true;
+			},
+			message: (props) => `Algum dos bancos de dados '${props.value}' não existe.`,
+		},
 	},
 }, {
 	timestamps: true,
@@ -128,8 +145,8 @@ userSchema.statics.insertIfNotExists = async function (doc) {
 	return user;
 };
 
-userSchema.statics.getAllDatabasesAllowed = async function () {
-	return await mongoose.model('User').distinct('databasesAllowed');
+userSchema.statics.getAllDatabasesAllowed = function () {
+	return databasesAllowed;
 };
 
 /*

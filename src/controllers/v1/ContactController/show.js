@@ -6,7 +6,7 @@ async function show (req, res, next) {
 	try {
 		const user = req.user;
 		const targetDb = req.params.targetDb;
-		const isAllowed = await checkPermission(user, targetDb);
+		const isAllowed = checkPermission(user, targetDb);
 
 		if (!isAllowed.result) {
 			return res.status(isAllowed.res.status).json({
