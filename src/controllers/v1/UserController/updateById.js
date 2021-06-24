@@ -7,6 +7,8 @@ async function update (req, res, next) {
 		const _id = req.params.id;
 		const userData = req.body;
 
+		userData.databasesAllowed = userData.databasesAllowed || [];
+
 		/*
 		 * Substitui os caracteres especiais no nome dos bancos de dados
 		 */
