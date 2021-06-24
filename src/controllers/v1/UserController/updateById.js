@@ -1,12 +1,25 @@
 const mongoose = require('mongoose');
 const User = mongoose.model('User');
+const stringUtils = require('@utils/string');
 
 async function update (req, res, next) {
 	try {
 		const _id = req.params.id;
+		const userData = req.body;
+
+		userData.databasesAllowed = userData.databasesAllowed || [];
+
+		/*
+		 * Substitui os caracteres especiais no nome dos bancos de dados
+		 */
+		for (let i = 0; i < userData.databasesAllowed.length; i++) {
+			userData.databasesAllowed[i] = stringUtils.
+				replaceSpecialCharacters(userData.databasesAllowed[i]);
+		}
+
 		let user = await User.findById(_id);
 
-		Object.assign(user, req.body);
+		Object.assign(user, userData);
 		user = await user.save();
 
 		if (user) {
@@ -14,6 +27,7 @@ async function update (req, res, next) {
 				fullname: user.fullname,
 				email: user.email,
 				userType: user.userType,
+				databasesAllowed: user.databasesAllowed,
 			};
 
 			return res.status(200).json({

@@ -17,7 +17,10 @@ module.exports = {
 		/* -- Possible Errors -- */
 		'no-await-in-loop': 'off',
 		'no-console': 'off',
-		'no-constant-condition': [ 'error', { checkLoops: false } ],
+		'no-constant-condition': [
+			'error',
+			{ checkLoops: false },
+		],
 		'no-extra-parens': 'off',
 		'no-loss-of-precision': 'error',
 		'no-promise-executor-return': 'error',
@@ -38,7 +41,10 @@ module.exports = {
 		'default-case': 'error',
 		'default-case-last': 'error',
 		'default-param-last': [ 'error' ],
-		'dot-location': [ 'error', 'object' ],
+		'dot-location': [
+			'error',
+			'object',
+		],
 		'dot-notation': [
 			'error',
 			{
@@ -48,7 +54,10 @@ module.exports = {
 		eqeqeq: 'error',
 		'grouped-accessor-pairs': 'error',
 		'guard-for-in': 'off',
-		'max-classes-per-file': [ 'error', 1 ],
+		'max-classes-per-file': [
+			'error',
+			1,
+		],
 		'no-alert': 'error',
 		'no-caller': 'error',
 		'no-constructor-return': 'error',
@@ -106,11 +115,17 @@ module.exports = {
 		'prefer-named-capture-group': 'off',
 		'prefer-promise-reject-errors': 'error',
 		'prefer-regex-literals': 'error',
-		radix: [ 'error', 'as-needed' ],
+		radix: [
+			'error',
+			'as-needed',
+		],
 		'require-await': 'error',
 		'require-unicode-regexp': 'off',
 		'vars-on-top': 'off',
-		'wrap-iife': [ 'error', 'outside' ],
+		'wrap-iife': [
+			'error',
+			'outside',
+		],
 		yoda: 'error',
 
 		/* -- Strict Mode -- */
@@ -145,14 +160,26 @@ module.exports = {
 			'error',
 			{
 				multiline: true,
-				minItems: 3,
+				minItems: 2,
 			},
 		],
-		'block-spacing': [ 'error', 'always' ],
-		'brace-style': [ 'error', '1tbs' ],
-		camelcase: [ 'error', { properties: 'never' } ],
+		'block-spacing': [
+			'error',
+			'always',
+		],
+		'brace-style': [
+			'error',
+			'1tbs',
+		],
+		camelcase: [
+			'error',
+			{ properties: 'never' },
+		],
 		'capitalized-comments': [ 'off' ],
-		'comma-dangle': [ 'error', 'always-multiline' ],
+		'comma-dangle': [
+			'error',
+			'always-multiline',
+		],
 		'comma-spacing': [
 			'error',
 			{
@@ -160,11 +187,23 @@ module.exports = {
 				after: true,
 			},
 		],
-		'comma-style': [ 'error', 'last' ],
-		'computed-property-spacing': [ 'error', 'never' ],
+		'comma-style': [
+			'error',
+			'last',
+		],
+		'computed-property-spacing': [
+			'error',
+			'never',
+		],
 		'consistent-this': [ 'off' ],
-		'eol-last': [ 'error', 'always' ],
-		'func-call-spacing': [ 'error', 'never' ],
+		'eol-last': [
+			'error',
+			'always',
+		],
+		'func-call-spacing': [
+			'error',
+			'never',
+		],
 		'func-name-matching': 'error',
 		'func-names': [ 'off' ],
 		'func-style': [
@@ -174,14 +213,29 @@ module.exports = {
 				allowArrowFunctions: true,
 			},
 		],
-		'function-call-argument-newline': [ 'error', 'consistent' ],
-		'function-paren-newline': [ 'error', 'multiline' ],
+		'function-call-argument-newline': [
+			'error',
+			'consistent',
+		],
+		'function-paren-newline': [
+			'error',
+			'multiline',
+		],
 		'id-denylist': [ 'off' ],
 		'id-length': 'off',
 		'id-match': [ 'off' ],
-		'implicit-arrow-linebreak': [ 'error', 'beside' ],
-		indent: [ 'error', 'tab' ],
-		'jsx-quotes': [ 'error', 'prefer-double' ],
+		'implicit-arrow-linebreak': [
+			'error',
+			'beside',
+		],
+		indent: [
+			'error',
+			'tab',
+		],
+		'jsx-quotes': [
+			'error',
+			'prefer-double',
+		],
 		'key-spacing': [
 			'error',
 			{
@@ -201,7 +255,10 @@ module.exports = {
 				position: 'above',
 			},
 		],
-		'linebreak-style': [ 'error', 'unix' ],
+		'linebreak-style': [
+			'error',
+			'unix',
+		],
 		'lines-around-comment': [
 			'error',
 			{
@@ -212,7 +269,10 @@ module.exports = {
 				allowArrayStart: true,
 			},
 		],
-		'lines-between-class-members': [ 'error', 'always' ],
+		'lines-between-class-members': [
+			'error',
+			'always',
+		],
 		'max-depth': [
 			'error',
 			{
@@ -257,7 +317,10 @@ module.exports = {
 			},
 		],
 		'multiline-comment-style': [ 'off' ],
-		'multiline-ternary': [ 'error', 'always-multiline' ],
+		'multiline-ternary': [
+			'error',
+			'always-multiline',
+		],
 		'new-cap': [
 			'error',
 			{
@@ -265,7 +328,10 @@ module.exports = {
 				capIsNew: false,
 			},
 		],
-		'new-parens': [ 'error', 'always' ],
+		'new-parens': [
+			'error',
+			'always',
+		],
 		'newline-per-chained-call': [
 			'error',
 			{
@@ -300,7 +366,10 @@ module.exports = {
 		'no-underscore-dangle': 'off',
 		'no-unneeded-ternary': 'error',
 		'no-whitespace-before-property': 'error',
-		'nonblock-statement-body-position': [ 'error', 'beside' ],
+		'nonblock-statement-body-position': [
+			'error',
+			'beside',
+		],
 		'object-curly-newline': [
 			'error',
 			{
@@ -323,10 +392,19 @@ module.exports = {
 				allowAllPropertiesOnSameLine: false,
 			},
 		],
-		'one-var': [ 'error', 'never' ],
-		'one-var-declaration-per-line': [ 'error', 'initializations' ],
+		'one-var': [
+			'error',
+			'never',
+		],
+		'one-var-declaration-per-line': [
+			'error',
+			'initializations',
+		],
 		'operator-assignment': [ 'off' ],
-		'operator-linebreak': [ 'error', 'after' ],
+		'operator-linebreak': [
+			'error',
+			'after',
+		],
 		'padded-blocks': [
 			'error',
 			{
@@ -376,33 +454,63 @@ module.exports = {
 			},
 			{
 				blankLine: 'always',
-				prev: [ 'case', 'default' ],
+				prev: [
+					'case',
+					'default',
+				],
 				next: '*',
 			},
 		],
 		'prefer-exponentiation-operator': 'error',
 		'prefer-object-spread': 'error',
-		'quote-props': [ 'error', 'as-needed' ],
-		quotes: [ 'error', 'single' ],
-		semi: [ 'error', 'always' ],
+		'quote-props': [
+			'error',
+			'as-needed',
+		],
+		quotes: [
+			'error',
+			'single',
+		],
+		semi: [
+			'error',
+			'always',
+		],
 		'semi-spacing': 'error',
-		'semi-style': [ 'error', 'last' ],
+		'semi-style': [
+			'error',
+			'last',
+		],
 		'sort-keys': 'off',
 		'sort-vars': 'off',
 		'space-before-blocks': 'error',
-		'space-before-function-paren': [ 'error', 'always' ],
-		'space-in-parens': [ 'error', 'never' ],
+		'space-before-function-paren': [
+			'error',
+			'always',
+		],
+		'space-in-parens': [
+			'error',
+			'never',
+		],
 		'space-infix-ops': 'error',
 		'space-unary-ops': 'error',
-		'spaced-comment': [ 'error', 'always' ],
+		'spaced-comment': [
+			'error',
+			'always',
+		],
 		'switch-colon-spacing': 'error',
 		'template-tag-spacing': 'error',
 		'unicode-bom': [ 'off' ],
 		'wrap-regex': 'error',
 
 		/* -- ECMAScript 6 -- */
-		'arrow-body-style': [ 'error', 'as-needed' ],
-		'arrow-parens': [ 'error', 'always' ],
+		'arrow-body-style': [
+			'error',
+			'as-needed',
+		],
+		'arrow-parens': [
+			'error',
+			'always',
+		],
 		'arrow-spacing': [
 			'error',
 			{
@@ -423,7 +531,10 @@ module.exports = {
 		'no-useless-constructor': 'error',
 		'no-useless-rename': 'error',
 		'no-var': 'error',
-		'object-shorthand': [ 'error', 'consistent' ],
+		'object-shorthand': [
+			'error',
+			'consistent',
+		],
 		'prefer-arrow-callback': 'off',
 		'prefer-const': 'error',
 		'prefer-destructuring': 'off',
@@ -431,10 +542,19 @@ module.exports = {
 		'prefer-rest-params': 'off',
 		'prefer-spread': 'error',
 		'prefer-template': 'error',
-		'rest-spread-spacing': [ 'error', 'never' ],
+		'rest-spread-spacing': [
+			'error',
+			'never',
+		],
 		'sort-imports': 'off',
 		'symbol-description': 'error',
-		'template-curly-spacing': [ 'error', 'never' ],
-		'yield-star-spacing': [ 'error', 'after' ],
+		'template-curly-spacing': [
+			'error',
+			'never',
+		],
+		'yield-star-spacing': [
+			'error',
+			'after',
+		],
 	},
 };

@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const config = require('@config');
 
 function connect (dbUrl) {
 	mongoose.connection.
@@ -6,6 +7,7 @@ function connect (dbUrl) {
 		on('disconnected', connect);
 
 	return mongoose.connect(dbUrl, {
+		authSource: config.db.mongo.authSource,
 		keepAlive: 1,
 		useNewUrlParser: true,
 		useUnifiedTopology: true,

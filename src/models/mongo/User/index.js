@@ -6,7 +6,15 @@ const jwt = require('jsonwebtoken');
 
 require('mongoose-type-email');
 
-const userTypes = [ 'user', 'admin' ];
+const userTypes = [
+	'user',
+	'admin',
+];
+
+const databasesAllowed = [
+	'macapa',
+	'varejao',
+];
 
 const userSchema = new Schema({
 	fullname: {
@@ -37,23 +45,26 @@ const userSchema = new Schema({
 		required: true,
 		default: true,
 	},
-	votes: {
-		type: [
-			{
-				_id: {
-					type: mongoose.SchemaTypes.ObjectId,
-					ref: 'Movie',
-				},
-				score: {
-					type: Number,
-				},
-			},
-		],
-		default: [],
-	},
 	token: {
 		type: String,
 		default: '',
+	},
+	databasesAllowed: {
+		type: [ String ],
+		required: true,
+		trim: true,
+		validate: {
+			validator: function (databases) {
+				for (const database of databases) {
+					if (!databasesAllowed.includes(database)) {
+						return false;
+					}
+				}
+
+				return true;
+			},
+			message: (props) => `Algum dos bancos de dados '${props.value}' não existe.`,
+		},
 	},
 }, {
 	timestamps: true,
@@ -80,7 +91,7 @@ userSchema.pre('save', async function (next) {
 	}
 
 	try {
-		const salt = await bcrypt.genSalt(config.db.saltRounds);
+		const salt = await bcrypt.genSalt(config.jwt.saltRounds);
 
 		this.password = await bcrypt.hash(this.password, salt);
 
@@ -132,6 +143,10 @@ userSchema.statics.insertIfNotExists = async function (doc) {
 	}
 
 	return user;
+};
+
+userSchema.statics.getAllDatabasesAllowed = function () {
+	return databasesAllowed;
 };
 
 /*
@@ -191,32 +206,6 @@ userSchema.methods.deactivate = async function () {
 		this.token = '';
 		user = await this.save();
 	}
-
-	return user;
-};
-
-userSchema.methods.vote = async function (movieId, score) {
-	let user = this;
-	let movie = await mongoose.model('Movie').findById(movieId);
-
-	if (!movie) {
-		throw new Error('O filme informado não existe.');
-	}
-
-	if (score < 0 || score > 4) {
-		throw new Error('A nota deve estar entre 0 e 4.');
-	}
-
-	user.votes = await user.votes.pull(movieId);
-
-	const vote = {
-		_id: movieId,
-		score: score,
-	};
-
-	user.votes.push(vote);
-	movie = await movie.saveVote(user._id, score);
-	user = await user.save();
 
 	return user;
 };

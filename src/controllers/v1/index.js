@@ -4,4 +4,5 @@ module.exports = {
 	BaseController: require('./BaseController'),
 	MovieController: require('./MovieController'),
 	UserController: require('./UserController'),
+	ContactController: require('./ContactController'),
 };

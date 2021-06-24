@@ -6,6 +6,7 @@ services:
     environment:
     - MYSQL_ROOT_PASSWORD=admin
     - MYSQL_DATABASE=admin
+    - MYSQL_DATABASE=macapa
     - MYSQL_USER=admin
     - MYSQL_PASSWORD=admin
     - MYSQL_ROOT_HOST=%
@@ -20,3 +21,16 @@ services:
     environment:
       POSTGRES_PASSWORD: "admin"
       POSTGRES_USER: "admin"
+      POSTGRES_DB: "varejao"
+
+  mongo:
+    image: mongo
+    container_name: "mongo"
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+    volumes:
+      - './docker-volume/mongodb:/data/db'
+    ports:
+      - 27012:27017
